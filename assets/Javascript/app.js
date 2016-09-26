@@ -36,15 +36,13 @@ database.ref().on("value", function(snapshot) {
     destinationTd.text(value.destination)
     nextArrivalTd.text(value.nextArrival)
     minsAwayTd.text(value.minsAway)
-    // rateTd.text(value.rate)
-    // totalTd.text(value.rate*monthsDiff)
+ 
 
     newRow.append(nameTd)
     newRow.append(destinationTd)
     newRow.append(nextArrivalTd)
     newRow.append(minsAwayTd)
-    // newRow.append(rateTd)
-    // newRow.append(totalTd)
+
 
     $('.table').append(newRow);
 
@@ -55,13 +53,13 @@ database.ref().on("value", function(snapshot) {
 
  });
 
-$("#addEmployee").on('click', function(){
+$("#addTrain").on('click', function(){
 
     var name = $("#nameInput").val().trim();
     var destination = $("#roleInput").val().trim();
     var frequency = $("#startDateInput").val().trim();
     var nextArrival = 8
-    var minsAway= $("#monthlyRateInput").val().trim();
+    var minsAway= $("#nextInput").val().trim();
   
 
     database.ref().push({
